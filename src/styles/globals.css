@@ -2,26 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .dropdown-btn {
+    @apply hover:bg-[#3b4db8] hover:text-white  cursor-pointer rounded-sm px-2 py-[.375rem] outline-none;
+  }
+  .dropdown-btn-danger {
+    @apply hover:bg-[#d92f36] hover:text-white  cursor-pointer rounded-sm px-2 py-[.375rem] outline-none;
+  }
+  .dropdown-btn-sub {
+    @apply hover:bg-[#3b4db8] hover:text-white  cursor-pointer;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: theme('colors.slate.600');
+  color: theme('colors.slate.50');
+}
+
+@property --shimmer-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes shimmer {
+  0% {
+    --shimmer-angle: 0deg;
+  }
+
+  100% {
+    --shimmer-angle: 360deg;
+  }
 }
