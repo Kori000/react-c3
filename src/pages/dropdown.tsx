@@ -91,11 +91,6 @@ export default function Home() {
           )}
         </AnimatePresence>
       </DropdownMenu.Root>
-      <div className='w-52 '>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aut
-        explicabo dolor iusto ipsam quam sapiente aliquam enim modi officiis,
-        dolore placeat esse corporis distinctio ratione, vel itaque alias nisi!
-      </div>
     </div>
   );
 }
